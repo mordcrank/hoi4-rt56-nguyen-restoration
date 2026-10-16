@@ -33,6 +33,7 @@ VIN_independence_war = {
 				value = 1
 			}
 			set_country_flag = VIN_already_doing_political_action_independence_war
+			add_ideas = VIN_imperial_zeal
 		}
 
 		days_remove = 15
@@ -74,6 +75,8 @@ VIN_independence_war = {
 				value = 1
 			}
 			set_country_flag = VIN_already_doing_political_action_independence_war
+			custom_effect_tooltip = nguyen_imperial_guard_tt
+			load_oob = VIN_nguyen_loyalists
 		}
 
 		days_remove = 15
@@ -115,6 +118,11 @@ VIN_independence_war = {
 				value = 1
 			}
 			set_country_flag = VIN_already_doing_political_action_independence_war
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 2000
+				producer = CHI
+			}
 		}
 
 		days_remove = 15

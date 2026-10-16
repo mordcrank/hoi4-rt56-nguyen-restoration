@@ -228,6 +228,12 @@ country_event = {
 	
 	option = {
 		name = vietnam.8.a
+		if = {
+			limit = {
+				has_idea = VIN_imperial_zeal
+			}
+			remove_ideas = VIN_imperial_zeal
+		}
 		clr_country_flag = VIN_war_of_independence_flag
 		remove_ideas = VIN_the_independence_war
 		remove_state_claim  = 670
@@ -685,6 +691,19 @@ country_event = {
 				transfer_troops = yes
 			}
 		}
+		if = {
+			limit = {
+				927 = {
+					owner = {
+						tag = ROOT
+					}
+				}
+			}
+			set_capital = {
+				state = 927
+				remember_old_capital = yes
+			}
+		}
 	}
 }
 
@@ -700,28 +719,88 @@ country_event = {
 	option = {
 		name = vietnam.17.a
 		ai_chance = {
-			base = 100
+			base = 90
 		}
 		if = {
 			limit = {
-				is_in_faction = no
+				is_faction_leader = yes
 			}
-			create_faction_from_template = {
-				template = faction_template_regional
-				name = ASIAN_LEAGUE_NAME
-				icon = GFX_faction_logo_generic_9
+			add_to_faction = FROM
+		}
+		else = {
+			give_guarantee = FROM
+			FROM = {
+				set_rule = {
+					can_create_factions = yes
+				}
 			}
 		}
-		add_to_faction = FROM
 		transfer_state = 728
+		news_event = {
+			id = vietnam.19
+		}
 		FROM = {
 			set_country_flag = nguyen_chinese_pact_flag
 		}
 	}
 	option = {
 		name = vietnam.17.b
+		ai_chance = {
+			base = 10
+		}
 		FROM = {
 			set_country_flag = nguyen_chinese_pact_refused_flag
 		}
+		random_list = {
+			80 = {
+				FROM = {
+					add_opinion_modifier = {
+						target = ROOT
+						modifier = CHI_refused_alliance
+					}
+				}
+			}
+			20 = {
+				FROM = {
+					add_opinion_modifier = {
+						target = ROOT
+						modifier = CHI_snubbed_by_socks
+					}
+					country_event = {
+						id = vietnam.18
+						days = 5
+					}
+				}
+			}
+		}
+	}
+}
+
+# Secret report from Nanjing (hidden refusal)
+country_event = {
+	id = vietnam.18
+	title = vietnam.18.t
+	desc = vietnam.18.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+
+	option = {
+		name = vietnam.18.a
+	}
+}
+
+# The Dragon-Tiger Pact (news)
+news_event = {
+	id = vietnam.19
+	title = vietnam.19.t
+	desc = vietnam.19.d
+	picture = GFX_news_event_generic_sign_treaty1
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = vietnam.19.a
 	}
 }

@@ -1,0 +1,12 @@
+opinion_modifiers = {
+	CHI_refused_alliance = {
+		value = -20
+		decay = 0.5
+		trade = no
+	}
+	CHI_snubbed_by_socks = {
+		value = -20
+		decay = 0.5
+		trade = no
+	}
+}

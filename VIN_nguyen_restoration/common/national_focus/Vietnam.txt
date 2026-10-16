@@ -3092,12 +3092,12 @@ focus_tree = {
 
 	focus = {
 		id = VIN_the_nguyen_restoration
-		icon = GFX_goal_generic_neutrality_focus
+		icon = GFX_goal_vietnam_nguyen_victorious
 		cost = 1
 		x = 82
 		y = 0
 		available = {
-			has_country_flag = nguyen_victorious_flag
+			has_government = neutrality
 		}
 		completion_reward = {
 			add_political_power = 50
@@ -3121,13 +3121,43 @@ focus_tree = {
 	}
 
 	focus = {
+		id = VIN_the_court_of_hue
+		icon = GFX_focus_generic_the_giant_wakes
+		cost = 10
+		x = 77
+		y = 2
+		prerequisite = {
+			focus = VIN_the_mandate_of_heaven
+		}
+		completion_reward = {
+			add_ideas = VIN_court_of_hue
+		}
+		search_filters = { FOCUS_FILTER_STABILITY }
+	}
+
+	focus = {
+		id = VIN_the_village_councils
+		icon = GFX_focus_generic_support_the_left_right
+		cost = 10
+		x = 79
+		y = 2
+		prerequisite = {
+			focus = VIN_the_mandate_of_heaven
+		}
+		completion_reward = {
+			add_ideas = VIN_village_councils
+		}
+		search_filters = { FOCUS_FILTER_STABILITY }
+	}
+
+	focus = {
 		id = VIN_the_imperial_guard
 		icon = GFX_focus_generic_military_academy
 		cost = 10
-		x = 85
-		y = 1
+		x = 81
+		y = 2
 		prerequisite = {
-			focus = VIN_the_nguyen_restoration
+			focus = VIN_the_mandate_of_heaven
 		}
 		completion_reward = {
 			add_ideas = VIN_imperial_guard
@@ -3136,42 +3166,93 @@ focus_tree = {
 	}
 
 	focus = {
-		id = VIN_the_emperor_stands_alone
-		icon = GFX_goal_anti_comintern_pact
+		id = VIN_the_mandarin_examinations
+		icon = GFX_focus_generic_little_entente
 		cost = 10
-		x = 79
-		y = 2
+		x = 77
+		y = 3
 		prerequisite = {
-			focus = VIN_the_mandate_of_heaven
-		}
-		mutually_exclusive = {
-			focus = VIN_envoys_to_nanjing
+			focus = VIN_the_court_of_hue
 		}
 		completion_reward = {
-			add_ideas = VIN_imperial_independence
+			add_ideas = VIN_mandarin_examinations
 		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = VIN_the_imperial_land_reform
+		icon = GFX_goal_agrarian_reform
+		cost = 10
+		x = 79
+		y = 3
+		prerequisite = {
+			focus = VIN_the_village_councils
+		}
+		completion_reward = {
+			add_ideas = VIN_imperial_land_reform
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = VIN_the_imperial_military_academy
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 10
+		x = 81
+		y = 3
+		prerequisite = {
+			focus = VIN_the_imperial_guard
+		}
+		completion_reward = {
+			add_ideas = VIN_imperial_military_academy
+		}
+		search_filters = { FOCUS_FILTER_MANPOWER }
+	}
+
+	focus = {
+		id = VIN_the_golden_age
+		icon = GFX_focus_generic_diplomatic_treaty
+		cost = 10
+		x = 79
+		y = 4
+		prerequisite = {
+			focus = VIN_the_mandarin_examinations
+		}
+		prerequisite = {
+			focus = VIN_the_imperial_land_reform
+		}
+		prerequisite = {
+			focus = VIN_the_imperial_military_academy
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = VIN_mandate_of_heaven
+				add_idea = VIN_the_golden_age
+			}
+		}
+		search_filters = { FOCUS_FILTER_STABILITY }
 	}
 
 	focus = {
 		id = VIN_envoys_to_nanjing
-		icon = GFX_goal_generic_allies_to_war
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
 		cost = 10
 		x = 85
-		y = 2
+		y = 1
 		prerequisite = {
-			focus = VIN_the_imperial_guard
+			focus = VIN_the_nguyen_restoration
 		}
 		mutually_exclusive = {
 			focus = VIN_the_emperor_stands_alone
 		}
 		available = {
+			is_subject = no
 			CHI = {
 				exists = yes
 				has_capitulated = no
 				NOT = { has_war_with = ROOT }
 			}
-			is_subject = no
 		}
 		completion_reward = {
 			CHI = {
@@ -3182,14 +3263,80 @@ focus_tree = {
 	}
 
 	focus = {
+		id = VIN_the_emperor_stands_alone
+		icon = GFX_goal_anti_comintern_pact
+		cost = 10
+		x = 88
+		y = 1
+		prerequisite = {
+			focus = VIN_the_nguyen_restoration
+		}
+		mutually_exclusive = {
+			focus = VIN_envoys_to_nanjing
+		}
+		available = {
+			is_subject = no
+		}
+		completion_reward = {
+			add_ideas = VIN_imperial_independence
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = VIN_chinese_military_advisors
+		icon = GFX_goal_continuous_boost_freedom
+		cost = 10
+		x = 85
+		y = 2
+		prerequisite = {
+			focus = VIN_envoys_to_nanjing
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = VIN_china_has_answered_tt
+				OR = {
+					has_country_flag = nguyen_chinese_pact_flag
+					has_country_flag = nguyen_chinese_pact_refused_flag
+				}
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { has_country_flag = nguyen_chinese_pact_flag }
+				add_ideas = VIN_chinese_military_advisors
+			}
+			else = {
+				add_political_power = 100
+			}
+		}
+		search_filters = { FOCUS_FILTER_ALLIANCE }
+	}
+
+	focus = {
+		id = VIN_the_border_fortresses
+		icon = GFX_goal_generic_fortify_city
+		cost = 10
+		x = 88
+		y = 2
+		prerequisite = {
+			focus = VIN_the_emperor_stands_alone
+		}
+		completion_reward = {
+			add_ideas = VIN_border_fortresses
+		}
+		search_filters = { FOCUS_FILTER_MANPOWER }
+	}
+
+	focus = {
 		id = VIN_the_lao_question
 		icon = GFX_goal_generic_demand_territory
 		cost = 10
-		x = 80
+		x = 85
 		y = 3
 		prerequisite = {
-			focus = VIN_the_emperor_stands_alone
-			focus = VIN_envoys_to_nanjing
+			focus = VIN_chinese_military_advisors
+			focus = VIN_the_border_fortresses
 		}
 		available = {
 			LAO = {
@@ -3210,11 +3357,11 @@ focus_tree = {
 		id = VIN_the_khmer_question
 		icon = GFX_goal_demand_sudetenland
 		cost = 10
-		x = 84
+		x = 88
 		y = 3
 		prerequisite = {
-			focus = VIN_the_emperor_stands_alone
-			focus = VIN_envoys_to_nanjing
+			focus = VIN_chinese_military_advisors
+			focus = VIN_the_border_fortresses
 		}
 		available = {
 			CAM = {
@@ -3235,7 +3382,7 @@ focus_tree = {
 		id = VIN_heirs_of_gia_long
 		icon = GFX_goal_generic_national_unity
 		cost = 10
-		x = 82
+		x = 87
 		y = 4
 		prerequisite = {
 			focus = VIN_the_lao_question
