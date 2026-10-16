@@ -1,0 +1,125 @@
+VIN_independence_war = {
+
+	recall_bao_dai_from_hong_kong = {
+		icon = generic_decision
+
+		allowed = {
+			original_tag = VIN
+		}
+
+		available = {
+			is_subject = no
+			original_tag = VIN
+			custom_trigger_tooltip = {
+				tooltip = VIN_only_one_action_independence_war_tt
+				NOT = {
+					has_country_flag = VIN_already_doing_political_action_independence_war
+				}
+			}
+		}
+
+		visible = {
+			original_tag = VIN
+			has_country_flag = VIN_war_of_independence_flag
+		}
+
+		cost = 25
+		fire_only_once = yes
+
+		complete_effect = {
+			custom_effect_tooltip = nguyen_gain_influence_tt
+			add_to_variable = {
+				var = VIN.nguyen_influence
+				value = 1
+			}
+			set_country_flag = VIN_already_doing_political_action_independence_war
+		}
+
+		days_remove = 15
+		remove_effect = {
+			clr_country_flag = VIN_already_doing_political_action_independence_war
+		}
+	}
+
+	rally_the_mandarins_of_hue = {
+		icon = generic_civil_support
+
+		allowed = {
+			original_tag = VIN
+		}
+
+		available = {
+			is_subject = no
+			original_tag = VIN
+			custom_trigger_tooltip = {
+				tooltip = VIN_only_one_action_independence_war_tt
+				NOT = {
+					has_country_flag = VIN_already_doing_political_action_independence_war
+				}
+			}
+		}
+
+		visible = {
+			original_tag = VIN
+			has_country_flag = VIN_war_of_independence_flag
+		}
+
+		cost = 25
+		fire_only_once = yes
+
+		complete_effect = {
+			custom_effect_tooltip = nguyen_gain_influence_tt
+			add_to_variable = {
+				var = VIN.nguyen_influence
+				value = 1
+			}
+			set_country_flag = VIN_already_doing_political_action_independence_war
+		}
+
+		days_remove = 15
+		remove_effect = {
+			clr_country_flag = VIN_already_doing_political_action_independence_war
+		}
+	}
+
+	fund_the_imperial_loyalists = {
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			original_tag = VIN
+		}
+
+		available = {
+			is_subject = no
+			original_tag = VIN
+			custom_trigger_tooltip = {
+				tooltip = VIN_only_one_action_independence_war_tt
+				NOT = {
+					has_country_flag = VIN_already_doing_political_action_independence_war
+				}
+			}
+		}
+
+		visible = {
+			original_tag = VIN
+			has_country_flag = VIN_war_of_independence_flag
+		}
+
+		cost = 25
+		fire_only_once = yes
+
+		complete_effect = {
+			custom_effect_tooltip = nguyen_gain_influence_tt
+			add_to_variable = {
+				var = VIN.nguyen_influence
+				value = 1
+			}
+			set_country_flag = VIN_already_doing_political_action_independence_war
+		}
+
+		days_remove = 15
+		remove_effect = {
+			clr_country_flag = VIN_already_doing_political_action_independence_war
+		}
+	}
+}
