@@ -12,21 +12,21 @@
 
 units = {
 	division= {
-		name = "Sư đoàn 'Vệ binh Hoàng gia'"
+		name = "Su đoàn 'Ve binh Hoàng gia'"
 		location = 4379
 		division_template = "Imperial Loyalists"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.5
 	}
 	division= {
-		name = "Sư đoàn 'An Nam'"
+		name = "Su đoàn 'An Nam'"
 		location = 4379
 		division_template = "Imperial Loyalists"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.5
 	}
 	division= {
-		name = "Sư đoàn 'Thần Phong'"
+		name = "Su đoàn 'Than Phong'"
 		location = 4379
 		division_template = "Imperial Loyalists"
 		start_experience_factor = 0.2

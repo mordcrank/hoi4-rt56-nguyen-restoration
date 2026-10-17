@@ -60,8 +60,8 @@
  vietnam.17.a:0 "Accept the offer and welcome them"
  vietnam.17.b:0 "We must maintain our geopolitical neutrality. Deny the alliance but respect their borders."
  # --- cosmetic tag ---
- VINNguyen:0 "Empire of Vietnam"
- VINNguyen_DEF:0 "the Empire of Vietnam"
+ VINNguyen:0 "Empire of Dai Nam"
+ VINNguyen_DEF:0 "the Empire of Dai Nam"
  VINNguyen_ADJ:0 "Vietnamese"
  # --- hidden refusal ---
  vietnam.18.t:0 "Secret Report from Nanjing"
@@ -78,3 +78,4 @@
  VIN_imperial_zeal_desc:0 "The return of the emperor has stirred loyalist soldiers across Annam. They fight harder for the throne, especially in the jungle."
  nguyen_imperial_guard_tt:0 "The new §YImperial Loyalists§! division template becomes available and three divisions appear in §YHue§!."
  VIN_china_has_answered_tt:0 "China has answered our request"
+ nguyen_chinese_arms_tt:0 "China sends §Y2000§! Small Arms '36 to our stockpile as a gift."
