@@ -9,4 +9,9 @@ opinion_modifiers = {
 		decay = 0.5
 		trade = no
 	}
+	VIN_betrayed_china = {
+		value = -100
+		decay = 0.1
+		trade = no
+	}
 }

@@ -11,6 +11,51 @@ ideas = {
 			}
 		}
 
+		VIN_imperial_army_reform = {
+			removal_cost = -1
+			picture = generic_infantry_bonus
+			modifier = {
+				army_defence_factor = 0.05
+				conscription_factor = 0.05
+			}
+		}
+
+		VIN_campaign_planning = {
+			removal_cost = -1
+			picture = generic_war_preparation
+			modifier = {
+				planning_speed = 0.15
+				max_planning = 0.1
+			}
+		}
+
+		VIN_continued_cooperation = {
+			removal_cost = -1
+			picture = generic_volunteer_expedition_bonus
+			modifier = {
+				research_speed_factor = 0.03
+				stability_factor = 0.05
+			}
+		}
+
+		VIN_knife_in_the_back = {
+			removal_cost = -1
+			picture = generic_morale_bonus
+			modifier = {
+				army_attack_factor = 0.05
+				stability_factor = -0.05
+			}
+		}
+
+		VIN_war_against_china = {
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			modifier = {
+				army_attack_factor = 0.05
+				war_support_factor = 0.1
+			}
+		}
+
 		VIN_mandate_of_heaven = {
 			removal_cost = -1
 			picture = generic_pp_unity_bonus

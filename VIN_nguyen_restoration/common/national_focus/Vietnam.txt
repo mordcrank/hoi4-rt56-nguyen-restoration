@@ -3395,4 +3395,213 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
+
+	# NGUYEN v0.3
+
+	focus = {
+		id = VIN_the_imperial_literacy_campaign
+		icon = GFX_focus_research2
+		cost = 5
+		x = 75
+		y = 3
+		prerequisite = {
+			focus = VIN_the_court_of_hue
+		}
+		available = {
+			num_of_factories > 4
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = VIN_illiteracy
+				}
+				remove_ideas = VIN_illiteracy
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = VIN_imperial_affairs
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 10
+		x = 78
+		y = 6
+		available = {
+			has_government = neutrality
+			custom_trigger_tooltip = {
+				tooltip = VIN_nguyen_court_rules_tt
+				has_country_flag = nguyen_victorious_flag
+			}
+		}
+		completion_reward = {
+			add_political_power = 25
+			add_command_power = 25
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = VIN_fortify_hue
+		icon = GFX_goal_generic_fortify_city
+		cost = 10
+		x = 78
+		y = 7
+		prerequisite = {
+			focus = VIN_imperial_affairs
+		}
+		completion_reward = {
+			custom_effect_tooltip = VIN_fortify_hue_tt
+			hidden_effect = {
+				927 = {
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 4379
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = {
+							all_provinces = yes
+							limit_to_naval_base = yes
+						}
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_MANPOWER }
+	}
+
+	focus = {
+		id = VIN_imperial_army_reform
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 10
+		x = 78
+		y = 8
+		prerequisite = {
+			focus = VIN_fortify_hue
+		}
+		completion_reward = {
+			add_ideas = VIN_imperial_army_reform
+		}
+		search_filters = { FOCUS_FILTER_MANPOWER }
+	}
+
+	focus = {
+		id = VIN_campaign_planning
+		icon = GFX_goal_generic_demand_territory
+		cost = 10
+		x = 78
+		y = 9
+		prerequisite = {
+			focus = VIN_imperial_army_reform
+		}
+		completion_reward = {
+			add_ideas = VIN_campaign_planning
+		}
+		search_filters = { FOCUS_FILTER_MANPOWER }
+	}
+
+	focus = {
+		id = VIN_betray_nanjing
+		icon = GFX_goal_anti_comintern_pact
+		cost = 10
+		x = 84
+		y = 5
+		prerequisite = {
+			focus = VIN_chinese_military_advisors
+		}
+		mutually_exclusive = {
+			focus = VIN_continue_the_cooperation
+			focus = VIN_war_on_the_tiger
+		}
+		available = {
+			CHI = {
+				exists = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = VIN_china_accepted_pact_tt
+				has_country_flag = nguyen_chinese_pact_flag
+			}
+			is_in_faction = no
+		}
+		completion_reward = {
+			CHI = {
+				diplomatic_relation = {
+					country = ROOT
+					relation = guarantee
+					active = no
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = VIN_betrayed_china
+				}
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = CHI
+			}
+			add_ideas = VIN_knife_in_the_back
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+	}
+
+	focus = {
+		id = VIN_continue_the_cooperation
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		cost = 10
+		x = 86
+		y = 5
+		prerequisite = {
+			focus = VIN_chinese_military_advisors
+		}
+		mutually_exclusive = {
+			focus = VIN_betray_nanjing
+			focus = VIN_war_on_the_tiger
+		}
+		available = {
+			CHI = {
+				exists = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = VIN_china_accepted_pact_tt
+				has_country_flag = nguyen_chinese_pact_flag
+			}
+		}
+		completion_reward = {
+			add_ideas = VIN_continued_cooperation
+		}
+		search_filters = { FOCUS_FILTER_ALLIANCE }
+	}
+
+	focus = {
+		id = VIN_war_on_the_tiger
+		icon = GFX_goal_generic_demand_territory
+		cost = 10
+		x = 89
+		y = 5
+		prerequisite = {
+			focus = VIN_the_border_fortresses
+		}
+		mutually_exclusive = {
+			focus = VIN_betray_nanjing
+			focus = VIN_continue_the_cooperation
+		}
+		available = {
+			CHI = {
+				exists = yes
+			}
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = CHI
+			}
+			add_ideas = VIN_war_against_china
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+	}
 }
