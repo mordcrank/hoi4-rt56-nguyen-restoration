@@ -1,10 +1,6 @@
-﻿spriteTypes = {
-	spriteType = {
+spriteTypes = {
+	SpriteType = {
 		name = "GFX_goal_vietnam_nguyen_victorious"
-		texturefile = "gfx/interface/goals/goal_vietnam_nguyen_victorious.dds"
-	}
-	spriteType = {
-		name = "GFX_goal_vietnam_nguyen_victorious_shine"
 		texturefile = "gfx/interface/goals/goal_vietnam_nguyen_victorious.dds"
 	}
 }

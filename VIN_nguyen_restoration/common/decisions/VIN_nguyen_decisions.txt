@@ -123,7 +123,7 @@ VIN_independence_war = {
 			custom_effect_tooltip = nguyen_chinese_arms_tt
 			hidden_effect = {
 				add_equipment_to_stockpile = {
-					type = infantry_equipment_1
+					type = infantry_equipment
 					amount = 2000
 					producer = CHI
 				}
