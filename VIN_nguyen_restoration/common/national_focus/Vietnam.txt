@@ -3425,14 +3425,10 @@ focus_tree = {
 		id = VIN_imperial_affairs
 		icon = GFX_goal_generic_neutrality_focus
 		cost = 10
-		x = 78
-		y = 6
-		available = {
-			has_government = neutrality
-			custom_trigger_tooltip = {
-				tooltip = VIN_nguyen_court_rules_tt
-				has_country_flag = nguyen_victorious_flag
-			}
+		x = 83
+		y = 1
+		prerequisite = {
+			focus = VIN_the_nguyen_restoration
 		}
 		completion_reward = {
 			add_political_power = 25
@@ -3445,30 +3441,25 @@ focus_tree = {
 		id = VIN_fortify_hue
 		icon = GFX_goal_generic_fortify_city
 		cost = 10
-		x = 78
-		y = 7
+		x = 83
+		y = 2
 		prerequisite = {
 			focus = VIN_imperial_affairs
 		}
 		completion_reward = {
 			custom_effect_tooltip = VIN_fortify_hue_tt
 			hidden_effect = {
-				927 = {
-					add_building_construction = {
-						type = bunker
-						level = 3
-						province = 4379
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = {
-							all_provinces = yes
-							limit_to_naval_base = yes
-						}
-						level = 2
-						instant_build = yes
-					}
+				add_building_construction = {
+					type = bunker
+					province = 4379
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					province = 4379
+					level = 2
+					instant_build = yes
 				}
 			}
 		}
@@ -3479,8 +3470,8 @@ focus_tree = {
 		id = VIN_imperial_army_reform
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 10
-		x = 78
-		y = 8
+		x = 83
+		y = 3
 		prerequisite = {
 			focus = VIN_fortify_hue
 		}
@@ -3494,8 +3485,8 @@ focus_tree = {
 		id = VIN_campaign_planning
 		icon = GFX_goal_generic_demand_territory
 		cost = 10
-		x = 78
-		y = 9
+		x = 83
+		y = 4
 		prerequisite = {
 			focus = VIN_imperial_army_reform
 		}
@@ -3522,10 +3513,7 @@ focus_tree = {
 			CHI = {
 				exists = yes
 			}
-			custom_trigger_tooltip = {
-				tooltip = VIN_china_accepted_pact_tt
-				has_country_flag = nguyen_chinese_pact_flag
-			}
+			has_country_flag = nguyen_chinese_pact_flag
 			is_in_faction = no
 		}
 		completion_reward = {
@@ -3566,10 +3554,7 @@ focus_tree = {
 			CHI = {
 				exists = yes
 			}
-			custom_trigger_tooltip = {
-				tooltip = VIN_china_accepted_pact_tt
-				has_country_flag = nguyen_chinese_pact_flag
-			}
+			has_country_flag = nguyen_chinese_pact_flag
 		}
 		completion_reward = {
 			add_ideas = VIN_continued_cooperation
