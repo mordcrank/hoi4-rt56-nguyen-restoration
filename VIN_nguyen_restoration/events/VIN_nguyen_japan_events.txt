@@ -1,0 +1,104 @@
+add_namespace = vin_nguyen
+
+# Japan receives the offer from Hue
+country_event = {
+	id = vin_nguyen.1
+	title = vin_nguyen.1.t
+	desc = vin_nguyen.1.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+
+	option = {
+		name = vin_nguyen.1.a
+		ai_chance = {
+			base = 75
+		}
+		add_to_faction = FROM
+		FROM = {
+			set_country_flag = VIN_japan_alliance_flag
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 3000
+				producer = JAP
+			}
+			if = {
+				limit = {
+					NOT = { has_war_with = CHI }
+					CHI = { exists = yes }
+				}
+				add_to_war = {
+					targeted_alliance = JAP
+					enemy = CHI
+					hostility_reason = asked_to_join
+				}
+			}
+			country_event = {
+				id = vin_nguyen.2
+				days = 1
+			}
+		}
+		news_event = {
+			id = vin_nguyen.4
+			days = 1
+		}
+	}
+	option = {
+		name = vin_nguyen.1.b
+		ai_chance = {
+			base = 25
+		}
+		FROM = {
+			set_country_flag = VIN_japan_alliance_refused_flag
+			country_event = {
+				id = vin_nguyen.3
+				days = 1
+			}
+		}
+	}
+}
+
+# Japan accepts
+country_event = {
+	id = vin_nguyen.2
+	title = vin_nguyen.2.t
+	desc = vin_nguyen.2.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+
+	option = {
+		name = vin_nguyen.2.a
+	}
+}
+
+# Japan refuses - Tokyo prefers Cuong De
+country_event = {
+	id = vin_nguyen.3
+	title = vin_nguyen.3.t
+	desc = vin_nguyen.3.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+
+	option = {
+		name = vin_nguyen.3.a
+		add_political_power = 100
+		add_stability = -0.03
+	}
+}
+
+# News: The Unthinkable Alliance
+news_event = {
+	id = vin_nguyen.4
+	title = vin_nguyen.4.t
+	desc = vin_nguyen.4.d
+	picture = GFX_news_event_generic_sign_treaty1
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = vin_nguyen.4.a
+	}
+}
