@@ -102,3 +102,112 @@ news_event = {
 		name = vin_nguyen.4.a
 	}
 }
+
+# --- v0.4 SIAM ---
+
+# Siam receives the envoys from Hue
+country_event = {
+	id = vin_nguyen.5
+	title = vin_nguyen.5.t
+	desc = vin_nguyen.5.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+
+	option = {
+		name = vin_nguyen.5.a
+		ai_chance = {
+			base = 20
+			modifier = {
+				add = 40
+				strength_ratio = {
+					tag = FROM
+					ratio < 0.7
+				}
+			}
+			modifier = {
+				add = 20
+				has_war = yes
+			}
+			modifier = {
+				factor = 0.25
+				is_in_faction = yes
+			}
+		}
+		FROM = {
+			set_country_flag = VIN_siam_tributary_flag
+			puppet = ROOT
+			country_event = {
+				id = vin_nguyen.6
+				days = 1
+			}
+		}
+		news_event = {
+			id = vin_nguyen.8
+			days = 1
+		}
+	}
+	option = {
+		name = vin_nguyen.5.b
+		ai_chance = {
+			base = 50
+		}
+		FROM = {
+			set_country_flag = VIN_siam_refused_flag
+			country_event = {
+				id = vin_nguyen.7
+				days = 1
+			}
+		}
+	}
+}
+
+# Siam accepts
+country_event = {
+	id = vin_nguyen.6
+	title = vin_nguyen.6.t
+	desc = vin_nguyen.6.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+
+	option = {
+		name = vin_nguyen.6.a
+		add_political_power = 50
+		add_stability = 0.03
+	}
+}
+
+# Siam refuses
+country_event = {
+	id = vin_nguyen.7
+	title = vin_nguyen.7.t
+	desc = vin_nguyen.7.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+
+	option = {
+		name = vin_nguyen.7.a
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = FROM
+		}
+		add_war_support = 0.05
+	}
+}
+
+# News: Siam bows to Hue
+news_event = {
+	id = vin_nguyen.8
+	title = vin_nguyen.8.t
+	desc = vin_nguyen.8.d
+	picture = GFX_news_event_generic_sign_treaty1
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = vin_nguyen.8.a
+	}
+}

@@ -704,6 +704,9 @@ country_event = {
 				remember_old_capital = yes
 			}
 		}
+		recruit_character = VIN_nguyen_van_hinh
+		recruit_character = VIN_le_van_vien
+		recruit_character = VIN_trinh_minh_the
 	}
 }
 

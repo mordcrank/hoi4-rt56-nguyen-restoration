@@ -1,0 +1,53 @@
+characters = {
+
+	VIN_nguyen_van_hinh = {
+		name = VIN_nguyen_van_hinh
+		portraits = {
+			army = {
+				large = "gfx/leaders/VIN/Portrait_Vietnam_Nguyen_Van_Hinh.dds"
+			}
+		}
+		field_marshal = {
+			traits = { organizer }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+
+	VIN_le_van_vien = {
+		name = VIN_le_van_vien
+		portraits = {
+			army = {
+				large = "gfx/leaders/VIN/Portrait_Vietnam_Le_Van_Vien.dds"
+			}
+		}
+		corps_commander = {
+			traits = { swamp_fox }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+
+	VIN_trinh_minh_the = {
+		name = VIN_trinh_minh_the
+		portraits = {
+			army = {
+				large = "gfx/leaders/VIN/Portrait_Vietnam_Trinh_Minh_The.dds"
+			}
+		}
+		corps_commander = {
+			traits = { jungle_rat }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+}

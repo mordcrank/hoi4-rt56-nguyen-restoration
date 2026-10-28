@@ -103,4 +103,10 @@
  VIN_knife_in_the_back:0 "A Knife in the Back"
  VIN_war_against_china:0 "War Against China"
  VIN_betrayed_china:0 "Betrayed by Vietnam"
- VIN_fortify_hue_tt:0 "Hue receives §Y2§! levels of land forts and §Y2§! levels of coastal forts."
+ VIN_fortify_hue_tt:0 "Hue receives §Y3§! levels of land forts and the naval bases of South Annam receive §Y2§! levels of coastal forts."
+ VIN_china_accepted_pact_tt:0 "China has accepted our pact"
+ VIN_nguyen_court_rules_tt:0 "The Nguyen court is in power"
+ # --- generals ---
+ VIN_nguyen_van_hinh:0 "Nguyen Van Hinh"
+ VIN_le_van_vien:0 "Le Van Vien"
+ VIN_trinh_minh_the:0 "Trinh Minh The"

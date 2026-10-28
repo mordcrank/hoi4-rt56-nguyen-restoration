@@ -162,5 +162,25 @@ ideas = {
 				production_speed_buildings_factor = 0.1
 			}
 		}
+
+		VIN_the_siamese_campaign = {
+			removal_cost = -1
+			picture = generic_morale_bonus
+			modifier = {
+				army_attack_factor = 0.05
+				war_support_factor = 0.05
+				attrition = -0.05
+			}
+		}
+
+		VIN_master_of_the_mekong = {
+			removal_cost = -1
+			picture = generic_economic_increase
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = 0.1
+				production_speed_buildings_factor = 0.05
+			}
+		}
 	}
 }

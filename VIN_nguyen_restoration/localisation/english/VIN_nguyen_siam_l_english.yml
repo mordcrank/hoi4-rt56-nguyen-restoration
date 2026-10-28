@@ -1,0 +1,31 @@
+﻿l_english:
+ # --- v0.4 Siam focuses ---
+ VIN_the_siamese_question:0 "The Siamese Question"
+ VIN_the_siamese_question_desc:0 "For centuries Hue and Bangkok have fought over the lands of the Mekong. With the empire restored, the court must decide how to deal with its oldest rival in the west."
+ VIN_envoys_to_bangkok:0 "Envoys to Bangkok"
+ VIN_envoys_to_bangkok_desc:0 "Before the empire draws its sword, it will offer Siam a place under the protection of Hue. A wise king will see that it is better to bow than to break."
+ VIN_march_on_bangkok:0 "March on Bangkok"
+ VIN_march_on_bangkok_desc:0 "Siam has meddled in Laos and Cambodia for too long. The imperial army will settle the old rivalry for good."
+ VIN_master_of_the_mekong:0 "Master of the Mekong"
+ VIN_master_of_the_mekong_desc:0 "From the mountains of Tonkin to the gulf of Siam, the river now flows through lands that answer to Hue. The empire is the master of the Mekong."
+ # --- v0.4 Siam ideas ---
+ VIN_the_siamese_campaign:0 "The Siamese Campaign"
+ VIN_the_siamese_campaign_desc:0 "The army is marching west. Supply lines through the jungle and the Annamite mountains have been prepared for a long campaign."
+ # --- v0.4 Siam tooltips ---
+ VIN_siamese_question_tt:0 "We gain §Yclaims§! on every §YSiamese§! state bordering our empire."
+ VIN_envoys_to_bangkok_tt:0 "§YSiam§! receives our offer to become a §Ytributary§! of Hue. If it refuses, we gain a §Ywar goal§! to force it."
+ VIN_siam_resolved_tt:0 "Siam is our tributary or no longer exists"
+ # --- v0.4 Siam events ---
+ vin_nguyen.5.t:0 "Envoys from Hue"
+ vin_nguyen.5.d:0 "Envoys of Emperor Bao Dai have arrived in Bangkok. They bring gifts, polite words and a clear message: the empire wants Siam to accept the protection of Hue, as the kings of the Mekong once paid tribute to the Nguyen.\n\nOur ministers are divided. Some say a war with Vietnam would cost us everything. Others say no Thai king has bowed to Hue in a hundred years, and none should start now."
+ vin_nguyen.5.a:0 "We accept the protection of Hue."
+ vin_nguyen.5.b:0 "Siam bows to no one."
+ vin_nguyen.6.t:0 "Bangkok Accepts"
+ vin_nguyen.6.d:0 "The Siamese government has accepted our offer. Siam will keep its king and its laws, but its foreign policy and its army will now follow the lead of Hue.\n\nAt court, the old mandarins remind everyone that this is how the Nguyen always preferred to win: with envoys first and soldiers only when needed."
+ vin_nguyen.6.a:0 "The west is secure."
+ vin_nguyen.7.t:0 "Bangkok Refuses"
+ vin_nguyen.7.d:0 "Our envoys have returned from Bangkok. The Siamese ministers listened politely, then refused every word of our offer.\n\nThe generals in Hue are not disappointed. The army has been preparing for this campaign for months, and now it has its reason."
+ vin_nguyen.7.a:0 "Then we will ask again, with soldiers."
+ vin_nguyen.8.t:0 "Siam Bows to Hue"
+ vin_nguyen.8.d:0 "In a surprise announcement, the government of Siam has accepted the protection of the Vietnamese Empire. Emperor Bao Dai's envoys were received in Bangkok with full honours, and Siamese foreign policy will now be directed from Hue.\n\nObservers note that it is the first time in more than a century that a Thai government has accepted the overlordship of its eastern neighbour."
+ vin_nguyen.8.a:0 "The dragon spreads its wings."

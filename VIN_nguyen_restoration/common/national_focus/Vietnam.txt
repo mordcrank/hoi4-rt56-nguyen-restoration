@@ -230,8 +230,8 @@ focus_tree = {
 							has_government = communism
 						}
 					}
-					
-					
+
+
 				}
 				create_wargoal = {
 					type = annex_everything
@@ -247,7 +247,7 @@ focus_tree = {
 							has_government = communism
 						}
 					}
-					
+
 				}
 				create_wargoal = {
 					type = annex_everything
@@ -380,7 +380,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			add_to_war = { 
+			add_to_war = {
 			    targeted_alliance = PRC
 			    enemy = CHI
 			    hostility_reason = asked_to_join
@@ -945,7 +945,7 @@ focus_tree = {
 					has_government = neutrality
 					has_government = democratic
 				}
-				
+
 			}
 		}
 		completion_reward = {
@@ -1891,7 +1891,7 @@ focus_tree = {
 		}
 		available = {
 			amount_research_slots < 6
-		}		
+		}
 		completion_reward = {
 			add_research_slot = 1
 		}
@@ -2476,7 +2476,7 @@ focus_tree = {
 		}
 		available = {
 			amount_research_slots < 6
-		}		
+		}
 		completion_reward = {
 			add_research_slot = 1
 		}
@@ -2553,13 +2553,13 @@ focus_tree = {
 					bonus = 0.5
 					uses = 1
 					ahead_reduction = 0.5
-					category = r56_special_forces_training_tech 
-				}	
+					category = r56_special_forces_training_tech
+				}
 			}
             hidden_effect = {
                 set_country_flag = cite_an_airborne_unit_flag
             }
-            unlock_decision_tooltip = { decision = cite_an_airborne_unit show_effect_tooltip = yes }						
+            unlock_decision_tooltip = { decision = cite_an_airborne_unit show_effect_tooltip = yes }
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		x = 64
@@ -2996,7 +2996,7 @@ focus_tree = {
 					category = cas_bomber
 				}
 			}
-			
+
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		x = 70
@@ -3676,5 +3676,128 @@ focus_tree = {
 			}
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
+	}
+
+	# NGUYEN v0.4 - SIAM
+
+	focus = {
+		id = VIN_the_siamese_question
+		icon = GFX_goal_generic_territory_or_war
+		cost = 10
+		x = 78
+		y = 10
+		prerequisite = {
+			focus = VIN_campaign_planning
+		}
+		available = {
+			is_subject = no
+			SIA = {
+				exists = yes
+				NOT = { is_subject_of = ROOT }
+			}
+			NOT = { is_in_faction_with = SIA }
+		}
+		completion_reward = {
+			add_political_power = 50
+			custom_effect_tooltip = VIN_siamese_question_tt
+			hidden_effect = {
+				every_owned_state = {
+					every_neighbor_state = {
+						limit = {
+							is_owned_by = SIA
+						}
+						add_claim_by = ROOT
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+	}
+
+	focus = {
+		id = VIN_envoys_to_bangkok
+		icon = GFX_goal_generic_major_alliance
+		cost = 10
+		x = 77
+		y = 11
+		prerequisite = {
+			focus = VIN_the_siamese_question
+		}
+		mutually_exclusive = {
+			focus = VIN_march_on_bangkok
+		}
+		available = {
+			is_subject = no
+			SIA = {
+				exists = yes
+				is_subject = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = VIN_envoys_to_bangkok_tt
+			SIA = {
+				country_event = vin_nguyen.5
+			}
+		}
+		search_filters = { FOCUS_FILTER_ALLIANCE }
+	}
+
+	focus = {
+		id = VIN_march_on_bangkok
+		icon = GFX_goal_vietnam_attack_siam
+		cost = 10
+		x = 79
+		y = 11
+		prerequisite = {
+			focus = VIN_the_siamese_question
+		}
+		mutually_exclusive = {
+			focus = VIN_envoys_to_bangkok
+		}
+		available = {
+			SIA = {
+				exists = yes
+				NOT = { is_subject_of = ROOT }
+			}
+			NOT = { is_in_faction_with = SIA }
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = SIA
+			}
+			add_ideas = VIN_the_siamese_campaign
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+	}
+
+	focus = {
+		id = VIN_master_of_the_mekong
+		icon = GFX_goal_generic_more_territorial_claims
+		cost = 10
+		x = 78
+		y = 12
+		prerequisite = {
+			focus = VIN_envoys_to_bangkok
+			focus = VIN_march_on_bangkok
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = VIN_siam_resolved_tt
+				OR = {
+					NOT = { country_exists = SIA }
+					SIA = { is_subject_of = ROOT }
+				}
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { has_idea = VIN_the_siamese_campaign }
+				remove_ideas = VIN_the_siamese_campaign
+			}
+			add_ideas = VIN_master_of_the_mekong
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 }
